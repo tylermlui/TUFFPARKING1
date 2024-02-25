@@ -20,6 +20,7 @@ def scrape():
         total_spaces = int(left_cols[1].text.strip().replace("Total Spaces: \n", ""))
         last_update = left_cols[2].text
         fade_percentage = 0 if availability_str == "Closed" else max(0,min(1, availability/ total_spaces))
+        fade_percentage = 0 if availability_str == "Closed" else max(1,min(0, availability/ total_spaces))
 
         areas[name] = {
             "availability": availability
