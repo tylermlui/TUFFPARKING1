@@ -1,4 +1,5 @@
 from flask import Flask 
+from scrape import scrape
 
 app = Flask(__name__)
 
@@ -20,6 +21,10 @@ def indexPage():
 @app.route("/")
 def main():
     return indexPage()
+
+@app.route("/api")
+def api():
+    return scrape()
 
 if __name__ == "__main__":
     app.run(debug=True)
