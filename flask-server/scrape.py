@@ -1,7 +1,6 @@
 import httpx
 import sqlite3
 from datetime import datetime 
-
 from bs4 import BeautifulSoup
 
 def getAverageTime(name):
@@ -9,7 +8,7 @@ def getAverageTime(name):
     new_cur = new_con.cursor()
     t = datetime.now()
     threshhold_time= t.strftime('%H:%M:%S')
-    res = new_cur.execute("SELECT location, time, estimatedtime FROM parking WHERE location=? ORDER BY date ASC LIMIT 18",(name,))
+    res = new_cur.execute("SELECT location, time, estimatedtime FROM parking WHERE location=? ORDER BY date ASC LIMIT 50",(name,))
     #location, estimatedtime = res.fetchone()
     result = res.fetchall()
     sum = 0

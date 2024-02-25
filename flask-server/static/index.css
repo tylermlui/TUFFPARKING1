@@ -1,27 +1,51 @@
+* {
+    font-family: "ohm-light", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(7, 7, 7);
+    margin: 0;
+    display: flex; /* Use flexbox */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+
+    margin-top: 0;
+    padding-bottom: 15vh;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-around; /* Adjust spacing between the elements */
+    align-items: center;
+    width: 90vw; /* Adjust as needed */
+}
+
+.info-box,
 #map {
-    width: 37.5vw; /* 37.5vw */
-    height: 80vh; /* 80.037037vh */
-    left: 0vw;
-    padding-bottom: 20vh;
-    /* margin-bottom: 10vh; */
+    width: 40vw; 
+    height: 80vh;
     border-radius: 10px;
-}
-
-body  {
-    height: 95vh;
-    width: 75vw;
-
-    background-color: #201c1c;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.header {
-    text-align: center;
+    margin-left: 0vw;
+    margin-right: 0vw;
+    /* text-align: center; */
     color: white;
-    font-size: 64pt;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
+}
+
+.logo {
+    width: 50%;
+    height: 50%;
+}
+
+.last-update {
+    margin-top: 5vh;
+    color: orange;
+    font-size: 24pt;
 }
 
 .leaflet-tooltip {
@@ -29,13 +53,74 @@ body  {
     border-color: transparent;
 }
 
+
 .text-info {
     font-size: 12px;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
-    line-height: 1.2;
-    /* background-color: rgba(255, 255, 255, 0.5) */
+
     background-color: transparent;
     /* background-color: rgba(0, 0, 0, 0); */
+}
+
+h1 {
+    padding-top: 8vh;
+    margin-bottom: 3vh;
+    text-align: center; /* Center the text */
+    font-size: 64pt;
+    color: rgb(109, 216, 255); /* Neon blue color */
+    text-shadow: 0 0 5px rgb(109, 216, 255), 0 0 10px rgb(109, 216, 255), 0 0 20px rgb(109, 216, 255), 0 0 30px rgb(109, 216, 255); /* Neon effect */
+}
+
+
+
+.lot-container {
+    font-size: 18pt;
+    line-height: 10px;
+    /* border: 2pt red solid; */
+}
+
+.lot-info {
+    line-height: 6vh;
+    background-color: #0c0c0c;
+    margin-bottom: 2vh;
+    /* border: 2pt #FF5F1F solid; */
+    border-radius: 10pt;
+
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+h2, p {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px rgb(109, 216, 255), 0 0 10px rgb(109, 216, 255), 0 0 20px rgb(109, 216, 255), 0 0 30px rgb(109, 216, 255);
+}
+
+p {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px rgb(180, 109, 255), 0 0 10px rgb(180, 109, 255), 0 0 20px rgb(180, 109, 255), 0 0 30px rgb(180, 109, 255);
+}
+
+
+.timeText {
+    color: rgb(182, 207, 205);
+    font-size: 16pt;
+}
+
+.submitForm{
+    margin-top: 3vh;
+    color: #1d1d1d;
+    margin-left: 45vw;
+}
+
+select,button {
+    font-size: 24pt;
+    background-color: #1d1d1d;
+    border-radius: 10pt;
+    color: white;
+    text-align: center;
+    padding: 1vb;
 }
