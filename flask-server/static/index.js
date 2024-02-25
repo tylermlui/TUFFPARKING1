@@ -4,25 +4,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-// var heat = L.heatLayer([
-// 	[50.5, 30.5, 0.2], // lat, lng, intensity
-// 	[50.6, 30.4, 0.5],
-// ], {radius: 25}).addTo(map);
-
-// var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-// 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-// 	subdomains: 'abcd',
-// 	maxZoom: 20
-// });
-var nut  = [
-    [33.88005, -117.8823], // top left
-    [33.8808, -117.8823], // top right
-    [33.8808, -117.8812], // bottom right
-    [33.88005, -117.8812] // bottom left
-];
-
-
-
 
 const lowColor = {
     red: 255,
@@ -45,11 +26,9 @@ function colorGradient(fadeFraction, rgbColor1, rgbColor2, rgbColor3) {
     var color2 = rgbColor2;
     var fade = fadeFraction;
 
-    // Do we have 3 colors for the gradient? Need to adjust the params.
     if (rgbColor3) {
       fade = fade * 2;
 
-      // Find which interval to use and adjust the fade percentage
       if (fade >= 1) {
         fade -= 1;
         color1 = rgbColor2;
@@ -93,19 +72,17 @@ function colorGradient(fadeFraction, rgbColor1, rgbColor2, rgbColor3) {
     function getGradient(dicAreas) {
         console.log(dicAreas)
 
+        for (let key in circles) {
 
-        // for(key in circles){
-        //     L.circle(circles[f'{key}'][center], {color: colorGradient(dicAreas[f"{key}"]["fade_percentage"], lowColor, mediumColor, highColor), radius: 150}).addTo(map);
+            const center = circles[key].center;
+            const fade_percentage = dicAreas[key].fade_percentage;
+            const color = colorGradient(fade_percentage, lowColor, mediumColor, highColor);
             
-        // }
-        // gradientval = dicAreas["Eastside Structure"]["fade_percentage"]
-        //     L.circle([33.88053842742955, -117.88163836042212 ], {color: colorGradient(gradientval, lowColor, mediumColor, highColor), radius: 150}).addTo(map);
-      
+            L.circle(center, { color: color, radius: 150 }).addTo(map);
+        }
+ 
     }
 
-var nutwood= L.circle([33.87900170185511, -117.88865432488892], {color: colorGradient(0.9, lowColor, mediumColor, highColor), radius: 150}).addTo(map);
-var stateCollege = L.circle([33.88300974613598, -117.88871227960868], {color: colorGradient(0.3, lowColor, mediumColor, highColor), radius: 150}).addTo(map);
-var aAndG = L.circle([33.88693893278237, -117.88840889203954], {color: colorGradient(0.6, lowColor, mediumColor, highColor), radius: 150}).addTo(map);
 
 var Jawg_Matrix = L.tileLayer('https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
 	attribution: '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
