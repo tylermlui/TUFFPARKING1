@@ -50,7 +50,7 @@ function colorGradient(fadeFraction, rgbColor1, rgbColor2, rgbColor3) {
   }
   let dicAreas;
 
-  fetch('/api')
+  fetch('/scrape')
       .then(response => response.json())
       .then(areas => {
           dicAreas = areas;
