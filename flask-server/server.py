@@ -2,6 +2,7 @@ from flask import Flask, request, redirect
 from scrape import scrape
 import sqlite3
 from datetime import datetime
+import os
 
 
 app = Flask(__name__)
