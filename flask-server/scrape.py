@@ -42,7 +42,7 @@ def scrape():
         elif availability_str == "Open":
             availability = "Open"
         elif availability_tr = "Full":
-            availability = "Full
+            availability = "Full"
         else:
             availability = int(availability_str)
         
