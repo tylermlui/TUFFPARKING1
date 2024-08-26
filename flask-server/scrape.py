@@ -41,8 +41,8 @@ def scrape():
             availability = None 
         elif availability_str == "Open":
             availability = "Open"
-        elif availability_tr == "Full":
-            availability = "Full"
+        elif availability_str == "Full":
+            availability = None
         else:
             availability = int(availability_str)
         
