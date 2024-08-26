@@ -47,7 +47,7 @@ def scrape():
             availability = int(availability_str)
         
         name = left_cols[0].text.strip()
-        total_spaces = int(left_cols[1].text.strip().replace("Total Spaces: \n", ""))
+        total_spaces = int(left_cols[1].text.strip().replace(""))
         last_update = left_cols[2].text
         try:
             fade_percentage = 0 if availability == None else max(0,min(1, availability/ total_spaces))
